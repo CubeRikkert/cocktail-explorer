@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import CocktailListContainer from './components/CocktailListContainer'
+import { Route } from 'react-router-dom'
+import CocktailCatagoriesImages from './components/CocktailCatagoriesImages'
+
 
 class App extends Component {
   render() {
@@ -10,9 +14,11 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <main>
+          <Route exact path="/" component={CocktailListContainer} />
+          <Route path="/cocktail-catagories/:catagory" component={CocktailCatagoriesImages} />
+        </main>
+
       </div>
     );
   }
